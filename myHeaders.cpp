@@ -471,6 +471,42 @@ void printVector(vector<int>v ) {
 }
 
 
+//:::::::: Domain Update Code:::::::::::::::::::
+
+void removeDomain(string &email) {
+
+    for(int i=email.size()-1; i>0; i--) {
+        if(email[i] == '@') {
+            email.pop_back();
+            break;
+        }
+        email.pop_back();
+    }
+}
+
+void addDomain(string &email, string newDomain) {
+    for(int i=0; i<newDomain.length(); i++) {
+        email.push_back(newDomain[i]);
+    }
+}
+
+vector<string> updateDomain(vector<string> &emailList, string newDomain) {
+
+    vector<string>updatedEmails = {};
+
+    for(int i=0; i<emailList.size(); i++) {
+        string currentEmail = {emailList[i]};
+        removeDomain(currentEmail);
+        addDomain(currentEmail,newDomain);
+        updatedEmails.push_back(currentEmail);
+        emailList[i] = currentEmail;
+    }
+    return updatedEmails;
+    
+    
+}
+
+
 //::::::::::::::::
 void pressEnterToContinue()
 {
