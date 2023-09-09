@@ -484,6 +484,7 @@ void removeDomain(string &email) {
     }
 }
 
+
 void addDomain(string &email, string newDomain) {
     for(int i=0; i<newDomain.length(); i++) {
         email.push_back(newDomain[i]);
