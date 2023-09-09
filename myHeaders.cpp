@@ -440,8 +440,38 @@ bool removeFile(const char* fileName)
         return 0;
     }
 }
+
 //:::::::::::::::::::::::::::::::::::::::
 
+void printVector(vector<string>v ) {
+
+    cout<<"{ ";
+    for(int i=0; i<v.size(); i++) {
+        if(i != v.size()-1) {
+            cout<<v[i]<<",";
+        }
+        cout<<v[i]<<" }";
+        
+    }
+}
+void printVector(vector<int>v ) {
+
+    cout<<"{ ";
+    for(int i=0; i<v.size(); i++) {        
+        
+        if(i == v.size()-1) {
+            cout<<v[i]<<" }";
+        }else{
+            cout<<v[i]<<", ";
+        }
+        
+        
+        
+    }
+}
+
+
+//::::::::::::::::
 void pressEnterToContinue()
 {
     cout<<"\n\n...Press Enter To Continue...";
