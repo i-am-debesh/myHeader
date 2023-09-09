@@ -508,6 +508,53 @@ vector<string> updateDomain(vector<string> &emailList, string newDomain) {
 }
 
 
+//::::::::::::All the characters in a list::::::::::::::
+string crackPassword(string password) {
+
+    
+
+    //////////////////////////////
+    vector<char> keys ;
+    // Add lowercase letters (a-z)
+    for (char c = 'a'; c <= 'z'; ++c) {
+        keys.push_back(c);
+    }
+
+    // Add uppercase letters (A-Z)
+    for (char c = 'A'; c <= 'Z'; ++c) {
+        keys.push_back(c);
+    }
+
+    // Add digits (0-9)
+    for (char c = '0'; c <= '9'; ++c) {
+        keys.push_back(c);
+    }
+
+    // Add common symbols
+    const char symbols[] = "!@#$%^&*()-_=+[]{}|;:'\",.<>/?";
+    for (char c : symbols) {
+        keys.push_back(c);
+    }
+    ////////////////////////////
+
+    string identifiedPass;
+
+    for(int i=0; i<password.length(); i++) {
+        for(int j=0; j<keys.size(); j++) {
+            if(password[i] == keys[j]) {
+                identifiedPass.push_back(keys[j]);
+            }
+        }
+    }
+
+    return identifiedPass;
+
+
+}
+
+    
+
+
 //::::::::::::::::
 void pressEnterToContinue()
 {
