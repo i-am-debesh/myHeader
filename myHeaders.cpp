@@ -564,3 +564,14 @@ void pressEnterToContinue()
     cin.get(temp);
 
 }
+
+//Delay in second::::::::
+void delayFor(int delayTimeInSecond) {
+    
+    int Time = delayTimeInSecond;
+    
+    time_t start_time = time(nullptr);
+    while (time(nullptr) - start_time < Time) {
+        // Busy waiting
+    }
+}
