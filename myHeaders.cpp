@@ -133,9 +133,6 @@ const char* RecommendFood(char firstLetter) {
 
 
 
-void print(const char* message) {
-    std::cout << message << std::endl;
-}
 
 bool findWord(string sentence, string word) {
 
@@ -294,6 +291,20 @@ bool isArmstrong(int number) {
     return 0;
 }
 
+
+bool isNumeric(string str) {
+    if(str.empty()) {
+        return false;
+    }
+
+    for(char ch : str) {
+        if(!isdigit(ch)) {
+            return false;
+        }
+    }
+
+    return true;
+}
 void inputArr(int arr[], int size) {
     for(int i=0; i<size; i++) {
         cin>>arr[i];
@@ -441,16 +452,20 @@ bool removeFile(const char* fileName)
     }
 }
 
-//:::::::::::::::::::::::::::::::::::::::
-
+//:::::::::::::::::::::::::::::::::::::::Print in the console::::::::::::::::::::::::
+void print(const char* message) {
+    std::cout << message << std::endl;
+}
 void printVector(vector<string>v ) {
 
     cout<<"{ ";
     for(int i=0; i<v.size(); i++) {
-        if(i != v.size()-1) {
-            cout<<v[i]<<",";
+        if(i == v.size()-1) {
+            cout<<v[i]<<" }";
+        }else{
+            cout<<v[i]<<", ";
         }
-        cout<<v[i]<<" }";
+        
         
     }
 }
@@ -469,6 +484,33 @@ void printVector(vector<int>v ) {
         
     }
 }
+
+void print(int num) {
+    cout<<num;
+}
+void print(char ch) {
+    cout<<ch;
+}
+void print(bool flag) {
+    cout<<flag;
+}
+
+void print(int arr[],int size) {
+    printArr(arr,size);
+}
+
+void print(string str) {
+    cout<<str;
+}
+
+void print(vector<int> nums) {
+    printVector(nums);
+}
+void print(vector<string> keys) {
+    printVector(keys);
+}
+
+
 
 
 //:::::::: Domain Update Code:::::::::::::::::::
