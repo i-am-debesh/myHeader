@@ -454,7 +454,7 @@ bool removeFile(const char* fileName)
 
 //:::::::::::::::::::::::::::::::::::::::Print in the console::::::::::::::::::::::::
 void print(const char* message) {
-    std::cout << message << std::endl;
+    std::cout << message ;
 }
 void printVector(vector<string>v ) {
 
