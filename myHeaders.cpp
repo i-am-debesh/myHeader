@@ -526,10 +526,12 @@ void removeDomain(string &email) {
 }
 
 
-void addDomain(string &email, string newDomain) {
+void addDomain(string &emailWithoutDomain, string newDomain) {
+    string email = emailWithoutDomain;
     for(int i=0; i<newDomain.length(); i++) {
         email.push_back(newDomain[i]);
     }
+    emailWithoutDomain = email;
 }
 
 vector<string> updateDomain(vector<string> &emailList, string newDomain) {
