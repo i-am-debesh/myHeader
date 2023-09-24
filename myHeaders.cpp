@@ -617,3 +617,76 @@ void delayFor(int delayTimeInSecond) {
         // Busy waiting
     }
 }
+
+
+//:::::::::Date Times::::::::::::::::::::::::::::::::::::::::::::::::::::
+class DateTime {
+    public:
+    int day, month, year;
+    public:
+    DateTime getCurrentDate() {
+        time_t t = time(0);
+        tm* now = localtime(&t);
+
+        DateTime current;
+        current.day = now->tm_mday;
+        current.month = now->tm_mon + 1;
+        current.year = now->tm_year + 1900;
+
+        return current;
+    }
+};
+/////////////::Age Class(calculation of Age related things):::::::::::::::::::::::::::::::::::::::::::::::
+class __Age {
+
+    private:
+    int day, month, year;
+
+    private:
+    void processingDelay() {
+        cout<<"Age calculation processing.";
+        delayFor(1);
+        cout<<".";
+        delayFor(1);
+        cout<<".";
+        delayFor(1);
+        cout<<".";
+        delayFor(1);
+        cout<<".";
+       
+    }
+    public:
+    void calculateAge(int day, int month, int year) {
+
+        processingDelay();
+        
+        DateTime currDate,birthDate;
+
+        birthDate.day = day;
+        birthDate.month = month;
+        birthDate.year = year;
+
+        currDate = currDate.getCurrentDate();
+
+        int ageYears = currDate.year - birthDate.year;
+        int ageMonths = currDate.month - birthDate.month;
+        int ageDays = currDate.day - birthDate.day;
+
+        if(ageDays < 0) {
+            ageMonths--;
+            ageDays += 30;
+        }
+        if(ageMonths < 0) {
+            ageYears--;
+            ageMonths += 12;
+        }
+
+        cout<<"\nYour age is: "<<ageYears<<" Years, "<<ageMonths<<" months, "<<ageDays<<" days.\n";
+    }
+
+    bool isAdult(int age) {
+        return age >= 18? true: false;
+    }
+};
+
+__Age Age;
