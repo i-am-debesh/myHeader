@@ -422,6 +422,22 @@ void readData(string fileName) {
         cout<<"invalid FileName!"<<endl;
     }
 }
+vector<string> returnDataInList(string fileName) {
+    vector<string> list;
+    fstream myFile;
+    myFile.open(fileName+".txt", ios::in);
+    if(myFile.is_open()) {
+        string line;
+        while(getline(myFile,line)) {
+            list.push_back(line);
+        }
+    }
+    else {
+        cout<<"invalid FileName!"<<endl;
+    }
+
+    return list;
+}
 string returndData(string fileName) {
     fstream myFile;
     myFile.open(fileName+".txt", ios::in);
