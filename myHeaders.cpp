@@ -1,5 +1,10 @@
 #include<bits/stdc++.h>
 #include<ctime>
+#define lineBreak
+#define Vi vector<int>
+#define Vs vector<string>
+#define Vc vector<char>
+#define chaliye_Shuru_Karte_Hei int main()
 using namespace std;
 
 
